@@ -8,7 +8,7 @@ public:
     static double calculatePi(int iterations) {
         double pi = 0.0;
 
-        // グレゴリ・ライプニッツ級数の実装部分
+        // グレゴリ・ライプニッツ級数の展開
         for (int k = 0; k < iterations; ++k) {
             pi += (std::pow(-1, k)) / (2 * k + 1);
         }
@@ -32,8 +32,8 @@ public:
 };
 
 int main() {
-    // 反復回数の指定
-    int iterations_list[] = {10, 100, 1000, 10000};
+    // 反復回数の指定 正確な実行時間を得るために、バッファーとして最初に10000回反復させ、この計算結果や時間はデータを取らない
+    int iterations_list[] = {10000, 10, 100, 1000, 10000};
     
     for (int iterations : iterations_list) {
         // 開始時間を記録
